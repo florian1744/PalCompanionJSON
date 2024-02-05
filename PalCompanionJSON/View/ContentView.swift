@@ -9,17 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel = ContentViewViewModel()
+    
+    init() {
+        viewModel.loadPalData()
+    }
 
     var body: some View {
-        VStack {
-            Text("Pal-Daten anzeigen")
-                .padding()
+        NavigationSplitView {
 
 //            Button("Daten laden und drucken") {
 //                viewModel.loadPalData()
 //                viewModel.printPalData()
 //            }
-            
+            List(viewModel.pal!) { pal in
+                NavigationLink {
+                    Text(pal.name) //detail
+                } label: {
+                    Text("\(pal.name)") //row
+                }
+           
+            } .navigationTitle("Paldex")
+        } detail: {
+            Text("detail")
         }
         
     }
