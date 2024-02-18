@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17A589A12B71797600C593A2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A589A02B71797600C593A2 /* DetailView.swift */; };
+		17D182F02B8243B700A81B68 /* SuitabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D182EF2B8243B700A81B68 /* SuitabilityView.swift */; };
 		17D7244F2B6D747A00AE1EB3 /* PalCompanionJSONApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D7244E2B6D747A00AE1EB3 /* PalCompanionJSONApp.swift */; };
 		17D724512B6D747A00AE1EB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D724502B6D747A00AE1EB3 /* ContentView.swift */; };
 		17D724532B6D747B00AE1EB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D724522B6D747B00AE1EB3 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		17A589A02B71797600C593A2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		17D182EF2B8243B700A81B68 /* SuitabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitabilityView.swift; sourceTree = "<group>"; };
 		17D7244B2B6D747A00AE1EB3 /* PalCompanionJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PalCompanionJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D7244E2B6D747A00AE1EB3 /* PalCompanionJSONApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalCompanionJSONApp.swift; sourceTree = "<group>"; };
 		17D724502B6D747A00AE1EB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				17D724502B6D747A00AE1EB3 /* ContentView.swift */,
 				17A589A02B71797600C593A2 /* DetailView.swift */,
+				17D182EF2B8243B700A81B68 /* SuitabilityView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			files = (
 				17D7246A2B6D879A00AE1EB3 /* ContentViewModel.swift in Sources */,
 				17D724682B6D875B00AE1EB3 /* Pal.swift in Sources */,
+				17D182F02B8243B700A81B68 /* SuitabilityView.swift in Sources */,
 				17D724512B6D747A00AE1EB3 /* ContentView.swift in Sources */,
 				17A589A12B71797600C593A2 /* DetailView.swift in Sources */,
 				17D7244F2B6D747A00AE1EB3 /* PalCompanionJSONApp.swift in Sources */,

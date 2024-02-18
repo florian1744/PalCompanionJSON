@@ -8,6 +8,8 @@
 import Foundation
 
 struct Pal: Identifiable, Decodable {
+
+    
     let id: Int
     let key: String
     let image: String
@@ -24,7 +26,7 @@ struct Pal: Identifiable, Decodable {
     
 }
 
-struct Suitability: Decodable {
+struct Suitability: Decodable, Hashable {
     let type: String
     let level: Int
 }

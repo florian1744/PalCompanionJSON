@@ -21,11 +21,11 @@ struct ContentView: View {
 //                viewModel.loadPalData()
 //                viewModel.printPalData()
 //            }
-            List(viewModel.pal!) { pal in
+            List(viewModel.pal!) { pali in
                 NavigationLink {
-                    Text(pal.name) //detail
+                    DetailView(pal: pali) //detail
                 } label: {
-                    Text("\(pal.name)") //row
+                    Text("\(pali.name)") //row
                 }
            
             } .navigationTitle("Paldex")

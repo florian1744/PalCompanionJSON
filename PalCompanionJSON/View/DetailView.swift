@@ -11,10 +11,15 @@ struct DetailView: View {
     
     var pal: Pal
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ForEach(pal, id: pal.id) { elem in
+            Text(pal.name)
+        }
     }
 }
 
 #Preview {
-    DetailView(pal: Pal.init(id: 01, key: "example_001", image: "pic", name: "example name", wiki: "wiki example", types: ["example_type", "example_type2"], imageWiki: "example_image_wiki", suitability: [Suitability(type: "example_type", level: 4)], drops: ["example_drop"], aura: Aura(name: "aura_name", description: "aura_description"), description: "desc", skills: [Skill(level: 666, name: "skill_name", type: "skill_type", cooldown: 1000, power: 10000, description: "skill_desc")]))
+    DetailView(pal: Pal.init(id: 01, key: "example_001", image: "pic", name: "example name", wiki: "wiki example", 
+                             types: ["example_type", "example_type2"], imageWiki: "example_image_wiki", suitability: [Suitability(type: "example_type", level: 4)],
+                             drops: ["example_drop"], aura: Aura(name: "aura_name", description: "aura_description"), description: "desc",
+                             skills: [Skill(level: 666, name: "skill_name", type: "skill_type", cooldown: 1000, power: 10000, description: "skill_desc")]))
 }
