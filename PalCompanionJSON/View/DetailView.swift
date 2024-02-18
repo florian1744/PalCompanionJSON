@@ -9,10 +9,12 @@ import SwiftUI
 
 struct DetailView: View {
     
-    var pal: Pal
+    let pal: Pal
+    
     var body: some View {
-        ForEach(pal, id: pal.id) { elem in
+        VStack {
             Text(pal.name)
+            Text(pal.description)
         }
     }
 }
