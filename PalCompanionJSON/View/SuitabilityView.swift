@@ -8,36 +8,65 @@
 import SwiftUI
 
 struct SuitabilityView: View {
-    
+    //
     var suitabilities: [Suitability]
-    @State var backgroundCol: Color = Color.white
+    //    @State var backgroundCol: Color = Color.white
     
     
     var body: some View {
-        HStack {
-            
-            ForEach(suitabilities, id: \.self) { elem in
+        
+        ForEach(suitabilities, id: \.self) { suitability in
+            suitability.level != 0 ?
+            HStack {
+                Text(suitability.type)
                 
-                ZStack {
+                ProgressView(value: (Float(suitability.level) / 5))
+                    .tint(colorForSuitabilityType(type: suitability.type))
                 
-                Image("\(elem.type)Icon")
-                Text(elem.type)
-                    .padding(.trailing)
+                Text(String(suitability.level))
+                
                 
             }
-            }
-            .background(backgroundCol)
-            .clipShape(.capsule)
             .padding()
+            : nil
         }
     }
-    private func getBackgroundColor(for type: String) -> Color {
-        return .white
+    func colorForSuitabilityType(type: String) -> Color {
+        switch type {
+        case "cooling":
+            Color.cooling
+        case "farming":
+            Color.farming
+        case "gathering":
+            Color.gathering
+        case "generating_electricity":
+            Color.generatingElectricity
+        case "handiwork":
+            Color.handwork
+        case "kindling":
+                .red
+        case "lumbering":
+            Color.lumbering
+        case "medicine_production":
+            Color.medicine
+        case "mining":
+            Color.mining
+        case "planting":
+            Color.planting
+        case "transporting":
+            Color.transporting
+        case "watering":
+            Color.watering
+            
+        default:
+                .blue
+        }
+        
     }
     
 }
 
 #Preview {
-    SuitabilityView(suitabilities: [Suitability(type: "Kindling", level: 2)], backgroundCol: Color.red)
+    SuitabilityView(suitabilities: [Suitability(type: "kindling", level: 1), Suitability(type: "gathering", level: 4), Suitability(type: "farming", level: 4)])
 }
 
