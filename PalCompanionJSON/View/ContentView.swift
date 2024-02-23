@@ -10,28 +10,45 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel = ContentViewViewModel()
     
+    @State private var searchText = ""
+    
+    
+    
+    
     init() {
         viewModel.loadPalData()
     }
-
+    
     var body: some View {
+        
         NavigationSplitView {
-
-//            Button("Daten laden und drucken") {
-//                viewModel.loadPalData()
-//                viewModel.printPalData()
-//            }
-            List(viewModel.pal!) { pali in
+            
+            List(viewModel.filteredPal(searchText: searchText)) { pali in
                 NavigationLink {
                     DetailView(pal: pali) //detail
                 } label: {
-                    Text("\(pali.name)") //row
+                    HStack {
+                        AsyncImage(url: URL(string: pali.imageWiki)) { image in
+                            image.resizable()
+                        } placeholder: {
+                            Image("PalPlaceholder")
+                        }
+                        .frame(width: 30, height: 30)
+                        Text(pali.name)
+                        Spacer()
+                        Text("No. \(pali.key)")
+                            .font(.caption)
+                    } //row
                 }
-           
-            } .navigationTitle("Paldex")
+                
+            }
+            .navigationTitle("Paldex")
+            .searchable(text: $searchText, placement: .toolbar, prompt: "Search Pal")
+            
         } detail: {
             Text("detail")
         }
+        
         
     }
 }

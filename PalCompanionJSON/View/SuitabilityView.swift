@@ -19,9 +19,12 @@ struct SuitabilityView: View {
             suitability.level != 0 ?
             HStack {
                 Text(suitability.type)
+                    .frame(maxWidth: .infinity, alignment: .center)
                 
+                Spacer()
                 ProgressView(value: (Float(suitability.level) / 5))
                     .tint(colorForSuitabilityType(type: suitability.type))
+                    .scaleEffect(x: 1, y: 1.75)
                 
                 Text(String(suitability.level))
                 
@@ -31,6 +34,7 @@ struct SuitabilityView: View {
             : nil
         }
     }
+    
     func colorForSuitabilityType(type: String) -> Color {
         switch type {
         case "cooling":
@@ -67,6 +71,6 @@ struct SuitabilityView: View {
 }
 
 #Preview {
-    SuitabilityView(suitabilities: [Suitability(type: "kindling", level: 1), Suitability(type: "gathering", level: 4), Suitability(type: "farming", level: 4)])
+    SuitabilityView(suitabilities: [Suitability(type: "kindling", level: 1), Suitability(type: "gathering", level: 4), Suitability(type: "generating_electricity", level: 4)])
 }
 

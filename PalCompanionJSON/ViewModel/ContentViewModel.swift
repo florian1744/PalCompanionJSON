@@ -11565,4 +11565,12 @@ class ContentViewViewModel: ObservableObject {
             print("\($0.name)")
         }
     }
+    func filteredPal(searchText: String) -> [Pal] {
+           guard let pal = pal else { return [] }
+           if searchText.isEmpty {
+               return pal
+           } else {
+               return pal.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+           }
+       }
 }

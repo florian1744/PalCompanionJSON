@@ -10,7 +10,7 @@ import Foundation
 struct Pal: Identifiable, Decodable {
 
     
-    let id: Int
+    var id: Int
     let key: String
     let image: String
     let name: String
@@ -37,6 +37,7 @@ struct Aura: Decodable {
 }
 
 struct Skill: Decodable {
+    //var id = UUID() // Identifiable protocol breaks code lol
     let level: Int
     let name: String
     let type: String
